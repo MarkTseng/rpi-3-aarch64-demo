@@ -155,7 +155,7 @@ void app(uint32_t r0, uint32_t r1, uint32_t r2, uint32_t r3)
 
 	if (this_cpuid < 3) {
 		unsigned long long *spin_table = (void *)0xd8;
-		spin_table[this_cpuid + 1] = 0x8000;
+		spin_table[this_cpuid + 1] = 0x80000;
 		__asm__ __volatile__("sev");
 	}
 
